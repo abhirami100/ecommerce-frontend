@@ -1,0 +1,100 @@
+
+<!-- when cart is empty -->
+
+<ng-container *ngIf="products.length==0">
+  <div class=" text-center border">
+      <div class="text-center">
+
+      </div>
+      <div class="center">
+          <img style="height: 400px;" src="https://i.postimg.cc/8C0SPRJB/shopping-e-commerce-empty-shopping-cart-items-products-zero-none-md.webp" alt="">
+          <h3>Your Cart is Empty!</h3>
+          <!-- <h6>Add Item to It Now</h6> -->
+          <button id="shop" routerLink="" class="btn btn-primary">Shop Now</button>
+
+      </div>
+  
+  </div>
+</ng-container>
+
+
+
+
+
+
+
+<ng-container *ngIf="products.length!=0">
+  <section class="h-100" style="background-color: #eee;">
+    <div class="container h-100 py-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-10">
+  
+          <div class="d-flex justify-content-between align-items-center mb-4">
+          </div>
+  
+          <div *ngFor=" let item of products" class="card rounded-3 mb-4">
+            <div class="card-body p-4">
+              <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-md-2 col-lg-2 col-xl-2">
+                  <img
+                    src="{{item.images}}"
+                    class="img-fluid rounded-3" alt="">
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3">
+                  <p class="lead fw-normal mb-2 fs-3">{{item.title}}</p>
+                    <span style="height: 300px;" >{{item.description}} </span><br><br>
+                    <span>{{item.discountPercentage}}%OFF</span>
+                    <!-- <h5 class="mb-0">₹{{item.price}}</h5> -->
+
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                  <button class="btn btn-link px-2"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                    <i class="fas fa-minus"></i>
+                  </button>
+  
+                  <input id="form1" min="0" name="quantity" value="2" type="number"
+                    class="form-control form-control-sm" />
+  
+                  <button class="btn btn-link px-2"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                    <i class="fas fa-plus"></i>
+                  </button> 
+                 </div> 
+                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                  <h5 class="mb-0">₹{{item.price}}</h5>
+                </div>
+                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                  <a (click)="removeItemCart(item)"><i id="trash" class="fas fa-trash fa-lg fs-3"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div id="card" class="card-body">
+
+              <strong class="totl ">Grand Total  </strong> ₹{{totalPrice}}
+
+            </div>
+          </div><br>
+  
+         
+  
+  
+          <div class="card">
+            <div id="card" class="card-body">
+              <button class="btn btn-dark mt-auto" type="button">
+                <a href="payment">Proceed to Pay </a>
+
+            </button>
+
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>

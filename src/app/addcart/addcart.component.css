@@ -1,0 +1,20 @@
+#card{
+    padding-left: 450px;
+}
+
+#card a{
+    color: white;
+    text-decoration: none;
+}
+
+#trash:hover{
+    color: red;
+
+}
+.totl{
+    padding-left: 150px;
+    font-size: 20px;
+    padding-right: 24px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,65 @@
+<!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="https://previews.123rf.com/images/fahkamram/fahkamram2005/fahkamram200500047/147655683-digital-marketing-vector-illustration-of-shopping-online-on-website-mobile-phone-use-as-background-b.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="1000">
+        <img src="https://static.vecteezy.com/system/resources/previews/006/861/600/non_2x/digital-marketing-illustration-of-shopping-online-on-website-mobile-phone-use-as-background-business-technology-e-commerce-delivery-service-free-vector.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item"data-bs-interval="500">
+        <img src="https://static.vecteezy.com/system/resources/previews/004/299/835/original/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+
+
+  
+
+
+<!-- Section-->
+<section class="py-5  ">
+    <div  class=" px-4 px-lg-5 mt-4  ">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div  class="col mb-5" *ngFor="let product of productDetails | filter:search: 'title'">
+
+                <div id="bor" class="card h-100 ">
+                    <!-- Product image-->
+                    <img  height="250px" class="card-img-top p-3" [src]="product.images" alt="" />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{product.title}}</h5>
+                            <!-- Product price-->
+                            ₹ {{product.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      
+                        <div class="text-center ">
+                            <!-- <button  class="btn btn-outline-dark mt-auto"   ><i class="fa-solid fa-trash "></i> </button>&nbsp;&nbsp; -->
+                            <button (click)="addtowishlist(product)" id="wlist" class="btn btn-outline-dark mt-auto" ><i class="fa-sharp fa-solid fa-heart"></i> </button>&nbsp;&nbsp;
+                            <button (click)="addToCart(product)" id="cart"  class="btn btn-outline-dark mt-auto" ><i class="fa-solid fa-cart-shopping"></i> </button>&nbsp;&nbsp;
+                            <a  id="btn"  class="btn btn-outline-dark mt-auto" routerLink="view-product/{{product.id}}">View Product</a>
+
+
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+

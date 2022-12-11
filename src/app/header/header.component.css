@@ -1,0 +1,28 @@
+#pro:hover{
+    color: gray;
+    
+
+
+}
+
+#name{
+    font-family:  'Silkscreen', cursive;;
+    text-shadow: 3px 3px    gray;
+
+}
+
+input{
+    padding-left: 20px;
+
+}
+
+
+#search{
+    padding-left: 300px;
+}
+#icon{
+    color: red;
+}
+#p3{
+    font-size: 20px;
+}

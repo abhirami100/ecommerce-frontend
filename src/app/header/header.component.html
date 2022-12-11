@@ -1,0 +1,43 @@
+ <!-- Navigation-->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" routerLink="">
+            <i id="pro" class="fa-sharp fa-solid fa-truck-fast fs-1"></i>
+                        <span id="name" class="fs-1 p-4">Starbuy</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" >
+                    <form id="search" class="search"  action="">
+
+                        
+                        <input (keyup)="search($event)"  style="width:400px" class="form-control" type="text" placeholder="Search Products ">            
+
+
+                    </form>
+                    
+                </a></li>
+
+
+
+                <li id="p3" class="nav-item"><a class="nav-link text-white "  routerLink="wishlist"> Wish list <i id="icon" class="fa-solid fa-heart fs-5"></i></a></li>
+
+
+               
+
+               
+            </ul>
+
+             
+           
+            <button class="btn btn-outline-light" type="submit" routerLink="cart">
+                <i class="bi-cart-fill me-1"></i>
+                Cart
+                <span class="badge bg-dark text-white ms-1 rounded-pill">{{totalItem}}</span>
+
+            </button>
+           
+        </div>
+    </div>
+</nav>

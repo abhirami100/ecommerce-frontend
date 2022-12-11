@@ -1,0 +1,53 @@
+
+<ng-container *ngIf="wishList.length==0">
+    <h4 id="ss" class="text-center mt-5 ">Your WishList is Empty</h4>
+    <div class="text-center">
+        <img  src="https://i.postimg.cc/GhmnYgFJ/empty-wishlist-vector.jpg" alt="">
+    </div>
+    <button id="wempty" routerLink="" class="btn btn-primary mt-3 mb-3 ">Shop Now</button>
+</ng-container>
+
+<ng-container *ngIf="wishList.length!=0">
+
+<div  class="cart-wrap">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12">
+                <div class="main-heading mb-10 text-center ">My wishlist</div>
+                <div   class="table-wishlist">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="45%">Product Name</th>
+                                <th width="15%"> Price</th>
+                                <th width="15%">Stock Status</th>
+                                <th width="15%"></th>
+                                <th width="10%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="let product of wishList">
+                                <td width="45%">
+                                    <div class="display-flex align-center">
+                                        <div class="img-product">
+                                            <img style="width: 150px;" src="{{product.images}}" alt="" class="mCS_img_loaded">
+                                        </div>
+                                        <div class="name-product">
+                                            {{product.title}}
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="15%" class="price">₹{{product.price}}</td>
+                                <td width="15%"><span class="in-stock-box">{{product.stock}}</span></td>
+                                <td width="15%"><button  (click)="addToCart(product)"  class="round-black-btn small-btn">Add to Cart</button></td>
+                                <td width="10%" class="text-center"><a (click)="removeItem(product)" ro="#" class="trash-icon"><i class="far fa-trash-alt fs-3"></i></a></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</ng-container>

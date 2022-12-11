@@ -1,0 +1,32 @@
+#btn{
+    padding-top: 100px;
+}
+
+#image{
+
+    width: 500px;
+    height: 500px;
+    border-radius: 30px;
+}
+#image:hover{
+    transform: scale(1.05);
+    transition: transform 400ms;
+
+}
+
+#btn a{
+    text-decoration: none;
+}
+
+h1{
+    padding-bottom: 35px;
+    font-size: 50px;
+}
+#wlist{
+    color: red;
+}
+
+#bor{
+    border-color: blue;
+}
+

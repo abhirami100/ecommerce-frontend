@@ -1,0 +1,38 @@
+#bor{
+    border-color: black;
+    border-radius: 50px;
+    padding-bottom: 10px;
+}
+#bor:hover{
+    background: #f7f7ff;
+    /* transform: scale(0.93); */
+    /* transition: transform 550ms; */
+
+
+}
+
+section{
+    background-color: #f7f7ff;
+}
+
+ #bor:hover  img{   
+     transform: scale(1.03);
+         transition: transform 500ms;
+
+}
+#bor img{
+    border-radius: 30px;
+}
+#btn:hover{
+    transform: scale(1.12);
+}
+#wlist:hover{
+    transform: scale(1.12);
+}
+#cart:hover{
+    transform: scale(1.12);
+}
+.carousel-item img{
+    width: 100%;
+    height: 500px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title></title>
+
+</head>
+
+<body>
+
+    <!-- Product section-->
+    <section class="py-5 ">
+        <div class="container px-4 px-lg-5 my- 5  ">
+            <div class="row gx-4 gx-lg-5 align-items-center border p-4 ">
+                <div class="col-md-6"><img id="image" class="card-img-top mb-5 mb-md-0" src="{{body.images}}"
+                        alt="..." /></div>
+                <div class="col-md-6">
+                    <!-- <div class="small mb-1">SKU: BST-498</div> -->
+                    <h1 class="display-5 fw-bolder">{{body.title}}</h1>
+                    <div class="fs-6 mb-3">
+                        <span>BRAND : {{body.brand}}</span>
+                    </div>
+                    <div class="fs-6 mb-3">
+                        <span>STOCK : {{body.stock}}</span>
+                    </div>
+                    <div class="fs-6 mb-3">
+                        <span>DESCRIPTION : {{body.description}}</span>
+                    </div>
+                    <div class="fs-6 mb-3">
+                        <span> {{body.discountPercentage}}%OFF </span>
+                    </div>
+
+                    <p class="mt-2">
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Reviews
+                        </button>
+
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body bg-dark text-light">
+                            <div class="mt-2" *ngFor="let item of body.reviews">
+                               <h5> {{item['name']}} ( {{item['date']}})</h5>
+                               <h6>Reating : {{item['rating']}}  </h6>
+                               <p>comments : {{item['comments']}}</p>
+                            </div>
+                    
+                            </div>
+                        </div>
+
+
+
+                    <div id="btn">
+                        <button (click)="addToCart(body)" class="btn btn-outline-dark" type="button">
+                            <i class="fa-solid fa-cart-shopping fs-3"></i>
+
+                        </button> &nbsp; &nbsp; &nbsp; &nbsp;
+
+                        <button (click)="addtowishlist(body)" class="btn btn-outline-dark mt-auto" type="button">
+                            <i id="wlist" class="fa-solid fa-heart fs-3"></i>
+
+                        </button>
+
+
+                    </div>
+                </div>
+                </div>
+            </div>
+       
+    
+    
+
+    </section>
+
+</body>
+
+</html>
